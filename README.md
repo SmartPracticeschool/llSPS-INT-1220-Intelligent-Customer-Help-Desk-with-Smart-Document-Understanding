@@ -1,33 +1,11 @@
- "Intelligent Customer Help Desk With Smart Document Understanding"
+ llSPS-INT-1220-Intelligent-Customer-Help-Desk-with-Smart-Document-Understanding
+Intelligent Customer Helpdesk with Smart Document Understanding. This repository contains the Node-Red flow of the chatbot developed using various IBM Watson Services for backend and Node-Red for front end.
 
-● Project Summary :-
-In this developer code pattern,we use the typical customer care chatbot experience but instead of relying on predefined response,our dialog will provide a hook that can call out to other IBM Watson services for additional sources of information.In our case,it will be an owner manual that has been updated into Watson Discovery.
-The typical customer care chatbot can answer simple questions,such as store locations and hours,direction,and maybe even making appointments.when question falls outside of the scope of the pre-determined question isn't valid or offer to speak to a real person.
-In this code pattern,we walk you through a working example of a web app that utilizes multiple Watson services to create a better customer care experience.
-Using the Watson Discovery Smart Doument Understanding(SDU) feature,we will enhance the Discovery model so that queries will be better focused to only search the most relevant information found in a typical owner's manual
-Using Watson Assistant,we will use a standard customer care dialog to handle a typical conversation between a customer and a company representative.when a customer question involves operation of a product,the Assistant dialog will communicate with the Discovery service using a webhook.
-The webhook will be created by defining a web action using IBM Cloud Function. 
+The typical customer care chatbot can answer simple questions, such as store locations and hours, directions, and maybe even making appointments. When a question falls outside of the scope of the pre-determined question set, the option is typically to tell the customer the question isn’t valid or offer to speak to a real person.
 
-In summary,this code pattern will:
-‣ Create a customer care dialog skill in Watson Assistant
-‣ Use Smart Document Understanding to build an enhanced Watson Discovery collection
-‣ Create an IBM Cloud Function web action that allow Watson Assistant to post queries to Watson Discovery
+In this project, there will be another option. If the customer question is about the operation of a device, the application shall pass the question onto Watson Discovery Service, which has been pre-loaded with the device’s owners manual. So now, instead of “Would you like to speak to a customer representative?” we can return relevant sections of the owners manual to help solve our customers’ problems. So unless and untill customer specifically asks for a customer representative the bot will try to solve all your queries.
 
-• Project Requirements :-
-‣ Pre Defined customer care dialog
-‣ Owner's manual
+To take it a step further, the project shall use the Smart Document Understanding feature of Watson Discovery to train it on what text in the owners manual is important and what is not. This will improve the answers returned from the queries. Then using Watson actions as webhook, Watson Discovery can be integrated with Watson assistant. Finally using Node-Red, Watson assistant can be integrated with a web UI. This UI can then be used to connect with Watson assistant and chat with it.
 
-• Functional Requirement :-
-‣IBM Cloud Function
-‣IBM Watson Assistant
-‣IBM Watson Discovery
-‣Node red
-
-• Technical Requirement :-
-‣Python
-
-• Project Deliverables :-
-The code pattern provide excellent results.The chatbot provide answer to queries which fall out of pre determined questions 
-
-• Project Schedule :-
-‣4 week 
+In Watson Discovery I have used the ecobee3_userguide.
+ 
